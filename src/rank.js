@@ -29,10 +29,14 @@ function captainHistoryRisk (voyage, history) {
     result += 4;
   }
   result += history.filter(v => v.profit < 0).length;
-  if (voyage.zone === 'china' && hasChina(history)) {
+  if (isChina(voyage) && hasChina(history)) {
     result -= 2;
   }
   return Math.max(result, 0);
+}
+
+function isChina(voyage) {
+  return voyage.zone === 'china';
 }
 
 function voyageProfitFactor (voyage, history) {
