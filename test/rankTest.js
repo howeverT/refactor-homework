@@ -1,7 +1,7 @@
 const rankTest = require('ava');
 const {rating} = require('../src/rank')
 
-rankTest('Case 1,should return B given length 20 and history 1', t => {
+rankTest('Case 1,should return B given voyage length 20 and history length 1', t => {
   //given
   const voyage = {
     zone: 'china',
