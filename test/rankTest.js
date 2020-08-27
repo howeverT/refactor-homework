@@ -153,3 +153,32 @@ rankTest('Case 3,should return B given east-indies and length 12 and history len
   //then
   t.is('B', result);
 })
+
+rankTest('Case 4,should return B given length 10 and history length 4 with west-indies', t => {
+  //given
+  const voyage = {
+    zone: 'west-indies',
+    length: 10,
+  };
+  const history = [
+    {
+      zone: 'east-indies',
+      profit: 5,
+    },{
+      zone: 'west-indies',
+      profit: 15,
+    },{
+      zone: 'china',
+      profit: -2,
+    },
+    {
+      zone: 'west-africa',
+      profit: 7,
+    },
+  ];
+  //when
+  let result = rating(voyage, history);
+  //then
+  t.is('B', result);
+
+});
