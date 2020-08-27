@@ -20,7 +20,7 @@ rankTest('Case 1,should return B given length 20 and history 1', t => {
 
 });
 
-rankTest('Case 2,should return A when given voyage with china 12 and history length 5 ', t => {
+rankTest('Case 2,should return A when given voyage with china and length 12 and history length 15 ', t => {
   //given
   const voyage = {
     zone: 'china',
@@ -91,3 +91,4 @@ rankTest('Case 2,should return A when given voyage with china 12 and history len
   //then
   t.is('A', result);
 })
+
