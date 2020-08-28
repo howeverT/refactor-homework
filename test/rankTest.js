@@ -254,7 +254,7 @@ rankTest('Case 6,should return 3 given voyageProfitFactor voyage.zone=china and 
     t.is(result, 7);
   })
 
-  rankTest('Case 8,should return 8 voyage.zone is china and voyage.length is 18 and history has china and history.length is 11',
+  rankTest('Case 8,should return 8 given voyage.zone is china and voyage.length is 18 and history has china and history.length is 11',
   t => {
     const voyage = {
       zone: 'china',
@@ -267,4 +267,19 @@ rankTest('Case 6,should return 3 given voyageProfitFactor voyage.zone=china and 
     }
     const result = voyageProfitFactor(voyage, history);
     t.is(result, 8);
+  })
+
+  rankTest('Case 9,should return 2 given voyage.zone is west-indies and voyage.length is 15 and history has china and history.length is 9',
+  t => {
+    const voyage = {
+      zone: 'west-indies',
+      length: 15
+    }
+    const history = new Array(9);
+    history[0] = {
+      zone: 'china',
+      profit: 10
+    }
+    const result = voyageProfitFactor(voyage, history);
+    t.is(result, 2);
   })
