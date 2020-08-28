@@ -2,9 +2,7 @@ function printOwing(invoice) {
   let outstanding = 0;
 
   // calculate outstanding
-  for (const o of invoice.borderSpacing) {
-    outstanding += o.amount;
-  }
+  outstanding = caculateOutstanding(invoice, outstanding);
 
   // record due date
   const today = new Date();
@@ -15,6 +13,13 @@ function printOwing(invoice) {
   
   return createOwing(invoice, outstanding)
 }
+function caculateOutstanding(invoice, outstanding) {
+  for (const o of invoice.borderSpacing) {
+    outstanding += o.amount;
+  }
+  return outstanding;
+}
+
 function createOwing(invoice, outstanding) {
   let result = `***********************\n`
     + `**** Customer Owes ****\n`
