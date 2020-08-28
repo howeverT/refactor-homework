@@ -6,11 +6,7 @@ class Employee {
   }
 
   validateType (type) {
-    if (![
-      'engineer',
-      'manager',
-      'salesman',
-    ].includes(type)) {
+    if (isIncludeType(type)) {
       throw new Error(`Employee cannot be of type ${type}`);
     }
   }
@@ -23,3 +19,11 @@ class Employee {
 module.exports = {
   Employee
 }
+function isIncludeType(type) {
+  return ![
+    'engineer',
+    'manager',
+    'salesman',
+  ].includes(type);
+}
+
