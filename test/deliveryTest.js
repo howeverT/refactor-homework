@@ -70,3 +70,17 @@ deliveryTest('Case 5,should return 5 given isRush false and deliveryState ME', t
     const result = deliveryDate(anorder, isRush);
     t.is(result, 5);
 });
+
+deliveryTest('Case 6,should return 6 given isRush false and deliveryState AA', t => {
+    const isRush = false;
+    const anorder = {
+        deliveryState: 'AA',
+        placedOn:{
+            plusDays:(time)=>{
+                return time;
+            }
+        }
+    }
+    const result = deliveryDate(anorder, isRush);
+    t.is(result, 6);
+});
