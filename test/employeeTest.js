@@ -18,3 +18,16 @@ employeeTest('Case 2,type is manager', t => {
     //then
     t.is('Ben (manager)', result);
 });
+
+employeeTest('Case 3,Employee cannot be of type manager1', t => {
+    //given
+
+    //when
+    try {
+        let employee = new Employee('Ben', 'manager1')
+        t.fail();
+    }
+    catch (e) {
+        t.is(e.message, 'Employee cannot be of type manager1')
+    }
+});
