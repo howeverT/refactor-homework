@@ -283,3 +283,14 @@ rankTest('Case 6,should return 3 given voyageProfitFactor voyage.zone=china and 
     const result = voyageProfitFactor(voyage, history);
     t.is(result, 2);
   })
+
+  rankTest('Case 10,should return 3 given voyage.zone is china and voyage.length is 15 and history not has china and history.length is 9',
+  t => {
+    const voyage = {
+      zone: 'china',
+      length: 15
+    }
+    const history = new Array(9);
+    const result = voyageProfitFactor(voyage, history);
+    t.is(result, 3);
+  })
