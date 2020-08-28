@@ -1,5 +1,5 @@
 const rankTest = require('ava');
-const {rating} = require('../src/rank')
+const {voyageProfitFactor, voyageRisk, captainHistoryRisk,rating} = require('../src/rank')
 
 rankTest('Case 1,should return B given voyage length 20 and history length 1', t => {
   //given
@@ -227,3 +227,15 @@ rankTest('Case 5,should return B when given voyage with china and length 12 and 
   //then
   t.is('B', result);
 })
+
+rankTest('Case 6,should return 3 given voyageProfitFactor voyage.zone=china and voyage.length=13 and history is null',
+  t => {
+    const voyage = {
+      zone: 'china',
+      length: 13
+    }
+    const history = []
+    const result = voyageProfitFactor(voyage, history);
+    t.is(result, 3);
+  })
+
