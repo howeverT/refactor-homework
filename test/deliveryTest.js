@@ -56,3 +56,17 @@ deliveryTest('Case 4,should return 4 given isRush false and deliveryState MA', t
     const result = deliveryDate(anorder, isRush);
     t.is(result, 4);
 });
+
+deliveryTest('Case 5,should return 5 given isRush false and deliveryState ME', t => {
+    const isRush = false;
+    const anorder = {
+        deliveryState: 'ME',
+        placedOn:{
+            plusDays:(time)=>{
+                return time;
+            }
+        }
+    }
+    const result = deliveryDate(anorder, isRush);
+    t.is(result, 5);
+});
